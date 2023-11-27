@@ -8,7 +8,7 @@ import { conferencia } from '../conferencia';
 })
 export class conferenciaDetailComponent implements OnInit {
 
-  @Input() conferenciadetail !: conferencia;
+  @Input() conferenciaDetail !: conferencia;
 
   constructor() { }
 

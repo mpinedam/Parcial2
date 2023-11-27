@@ -1,9 +1,35 @@
-<div class = "container-fluid">
-  <div class = "row">
-    <div class = "col mb-2" *ngFor = "let conferencia of conferencias">
-      <div class="card p-2" style="width: 15rem; height: 33rem">
-        
-      </div>
-    </div>
+<div *ngIf = "selected">
+  <app-conferencia-detail [conferenciaDetail]="selectedconferencia"></app-conferencia-detail>
+</div>
+
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="h4">#</th>
+          <th class="h4">Name</th>
+          <th class="h4">Starts</th>
+          <th class="h4"> Ends</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let conferencia of conferencias">
+          <td>
+            <dd>{{conferencia.id}}</dd>
+          </td>
+          <td>
+            <dd (click) = "onSelected(conferencia)">{{conferencia.name}}</dd>
+          </td>
+          <td>
+            <dd>{{conferencia.starts}}</dd>
+          </td>
+          <td>
+            <dd>{{conferencia.ends}}</dd>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+    <h5> Upcoming Conferences: {{numUpcoming}}</h5>
   </div>
 </div>

@@ -9,7 +9,7 @@ import { conferencia } from './conferencia';
   providedIn: 'root'
 })
 export class conferenciaService {
-  private apiUrl: string = environment.baseURL + 'CAMBIAR';
+  private apiUrl: string = environment.baseURL;
 
 
 constructor(private http: HttpClient) { }

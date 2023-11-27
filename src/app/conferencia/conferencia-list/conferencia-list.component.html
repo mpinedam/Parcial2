@@ -36,7 +36,7 @@
     <h5> Upcoming Conferences: {{numUpcoming}}</h5>
   </div>
   <div class = "col-md-4">
-    <div *ngIf = "selected" class = "col-6">
+    <div *ngIf = "selected" class = "card">
       <app-conferencia-detail [conferenciaDetail]="selectedconferencia"></app-conferencia-detail>
     </div>
   </div>

@@ -25,12 +25,14 @@ export class conferenciaListComponent implements OnInit {
   current: Date = new Date();
 
   getconferencias(): void {
-    this.conferenciaService.getconferencias().subscribe(conferencias => 
-      {this.conferencias = conferencias
+    this.conferenciaService.getconferencias().subscribe(conferencias => {
+      this.conferencias = conferencias.filter(conferencia => 
+        new Date(conferencia.starts) > new Date()
+      );
       this.upcoming(); 
-  });
-   
+    });
   }
+   
 
   upcoming(): number {
     for (let c of this.conferencias) {
